@@ -3,15 +3,12 @@ import { auth_user } from '../models/auth/auth_user';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 import { jwtSecret, jwtExpiry } from '../config/JWTconf';
+import sequelize from '../config/database';
+import UserRequestBody from '../interface/bodyAuth';
 
+//инициализация моделей
+auth_user.initModel(sequelize);
 
-interface UserRequestBody {
-  username: string;
-  password: string;
-  email: string;
-  first_name?: string;
-  last_name?: string;
-}
 // Регистрация нового пользователя
 export const registerUser = async (req: Request<UserRequestBody>, res: Response): Promise<void> => {
   const { username, password, email, first_name, last_name} = req.body;

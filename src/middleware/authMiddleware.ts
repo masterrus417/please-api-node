@@ -6,7 +6,6 @@ interface JwtPayload {
   id: number;
   username: string;
 }
-
 // Расширение интерфейса Request
 declare global {
   namespace Express {

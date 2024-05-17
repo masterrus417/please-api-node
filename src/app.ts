@@ -2,16 +2,11 @@
 import express, { Application, Request, Response, NextFunction } from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
-import sequelize  from './config/database';
-import { auth_user } from './models/auth/auth_user';
 import authRouter from './routes/authRoutes';
-
+import apiV1 from './routes/apiV1Routers';
 
 const app: Application = express();
 const port = 3000;
-
-// Инициализация моделей
-auth_user.initModel(sequelize);
 
 
 // Мидлвары
@@ -27,7 +22,8 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 });
 
 // Конфигурация маршрутов
-app.use('/auth', authRouter);
+app.use('/auth', authRouter); // Маршрут для аутентификации
+app.use('/api/v1',apiV1); // Маршрут для API
 
 
 app.listen(port, () => {
