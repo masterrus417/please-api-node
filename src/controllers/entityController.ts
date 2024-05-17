@@ -1,18 +1,8 @@
 import { Request, Response } from 'express';
 import { entity } from '../models/pls/entity';
-import { ref_entity_type } from '../models/pls/ref_entity_type';
-import { ref_attr } from '../models/pls/ref_attr';
-import { ref_attr_group } from '../models/pls/ref_attr_group';
-import { entity_attr } from '../models/pls/entity_attr';
-import sequelize from '../config/database'
+import { modelsPls } from '../config/database';
 
-
-//инициализируем модели
-entity.initModel(sequelize);
-ref_entity_type.initModel(sequelize);
-ref_attr.initModel(sequelize);
-ref_attr_group.initModel(sequelize);
-entity_attr.initModel(sequelize);
+const { ref_entity_type, ref_attr, ref_attr_group, entity_attr } = modelsPls;
 
 //получаем список сущностей
 export const getEntity = async (req: Request, res: Response): Promise<void> => {
@@ -69,6 +59,26 @@ export const createEntity = async (req: Request, res: Response): Promise<void> =
     await entity_attr.bulkCreate(insertData);
 
     res.status(201).json(newEntity);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+}
+
+
+export const getEntityByType = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { rentity_type_name } = req.params;
+    console.log(1);
+    const listEntity = await entity.findAll({
+      include: [{
+        model: entity_attr,
+        as:'entity_attrs',
+        required: true
+      }]
+    });
+
+    res.status(200).json(listEntity);
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Internal server error' });
