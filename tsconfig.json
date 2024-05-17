@@ -1,0 +1,21 @@
+
+{
+    "compilerOptions": {
+      "target": "es6",                   /* Уровень ECMAScript для транспиляции кода */
+      "module": "commonjs",              /* Формат модулей */
+      "strict": true,                    /* Включает строгую типизацию */
+      "esModuleInterop": true,           /* Включает совместимость с CommonJS */
+      "forceConsistentCasingInFileNames": true, /* Проверка на согласованность регистра имен файлов */
+      "moduleResolution": "node",        /* Разрешение модулей */
+      "outDir": "./dist",                /* Директория для выходных файлов компиляции */
+      "baseUrl": "./",                   /* Базовый каталог для разрешения неразрешенных модулей */
+    "paths": {
+        "*": ["node_modules/*", "src/types/*"] /* Пути для разрешения модулей */
+    },
+      "typeRoots": ["node_modules/@types", "src/types"], /* Пути для определения типов */
+      "declaration": true,               /* Генерация .d.ts файлов */
+      "resolveJsonModule": true,          /* Разрешение импорта JSON как модулей */
+    },
+    "include": ["src/**/*.ts"],          /* Файлы для компиляции */
+    "exclude": ["node_modules"]          /* Исключения из компиляции */
+}
