@@ -1,13 +1,11 @@
 import { Request, Response } from 'express';
-import { auth_user } from '../models/auth/auth_user';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 import { jwtSecret, jwtExpiry } from '../config/JWTconf';
-import sequelize from '../config/database';
 import UserRequestBody from '../interface/bodyAuth';
+import { modelsAuth } from '../config/database';
 
-//инициализация моделей
-auth_user.initModel(sequelize);
+const { auth_user } = modelsAuth;
 
 // Регистрация нового пользователя
 export const registerUser = async (req: Request<UserRequestBody>, res: Response): Promise<void> => {
