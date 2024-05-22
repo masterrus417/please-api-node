@@ -93,7 +93,7 @@ interface GetFormattedEntitiesParams {
 }
 
 // Убедимся, что ts_deleted и user_deleted могут быть undefined в EntityData для соответствия модели entity
-type EntityInstance = Omit<EntityData, 'ts_deleted' | 'user_deleted'> & {
+type EntityInstance = Omit<EntityData, "ts_deleted" | "user_deleted"> & {
   ts_deleted?: Date | null;
   user_deleted?: string | null;
 };
