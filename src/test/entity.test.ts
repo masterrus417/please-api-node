@@ -1,10 +1,7 @@
 import request from "supertest";
 import app from "../app";
-import { requestBody } from "./json";
-
-const JWT_TOKEN =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJtYXN0ZXJydXM0MTciLCJpYXQiOjE3MTYzOTM1ODYsImV4cCI6MTcxNjM5NzE4Nn0.1YKYc1amM_HOV--7VYZeeJ4NOptcMv9uWnsMikfJCXA";
-const base_url = "http://localhost:3000";
+import { requestBodyEntityUpdate } from "./json";
+import { JWT_TOKEN, base_url } from "./testConfig";
 
 describe(`GET ${base_url}/api/v1/entity`, () => {
   test("should respond with status 200 and return list of entities", async () => {
@@ -51,7 +48,7 @@ describe(`PATCH ${base_url}/api/v1/entity/55/updated`, () => {
     const response = await request(app)
       .patch("/api/v1/entity/55/updated")
       .set("Authorization", `Bearer ${JWT_TOKEN}`)
-      .send(requestBody);
+      .send(requestBodyEntityUpdate);
 
     expect(response.status).toBe(200);
     expect(response.body).toHaveProperty("message");
@@ -62,10 +59,31 @@ describe(`DELETE ${base_url}/api/v1/entity/81/deleted`, () => {
   test("should respond with status 200 and return message", async () => {
     const response = await request(app)
       .delete("/api/v1/entity/81/deleted")
-      .set("Authorization", `Bearer ${JWT_TOKEN}`)
-      .send(requestBody);
+      .set("Authorization", `Bearer ${JWT_TOKEN}`);
 
     expect(response.status).toBe(200);
     expect(response.body).toHaveProperty("message");
+  });
+});
+
+describe(`POST ${base_url}/api/v1/entity/candidate/created`, () => {
+  test("should respond with status 200 and return created entity", async () => {
+    const response = await request(app)
+      .post("/api/v1/entity/candidate/created")
+      .set("Authorization", `Bearer ${JWT_TOKEN}`);
+
+    expect(response.status).toBe(200);
+    expect(response.body).toHaveProperty("entity_id");
+  });
+});
+
+describe(`POST ${base_url}/api/v1/entity/request/created`, () => {
+  test("should respond with status 200 and return created entity", async () => {
+    const response = await request(app)
+      .post("/api/v1/entity/request/created")
+      .set("Authorization", `Bearer ${JWT_TOKEN}`);
+
+    expect(response.status).toBe(200);
+    expect(response.body).toHaveProperty("entity_id");
   });
 });

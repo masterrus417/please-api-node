@@ -1,4 +1,4 @@
-const requestBody = {
+const requestBodyEntityUpdate = {
   entity_id: 55,
   ts_deleted: null,
   user_deleted: null,
@@ -85,4 +85,4 @@ const requestBody = {
   ],
 };
 
-export { requestBody };
+export { requestBodyEntityUpdate };

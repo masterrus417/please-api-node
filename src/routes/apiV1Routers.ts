@@ -20,7 +20,19 @@ import {
   createEntityLink,
 } from "../controllers/linkController";
 
+import {
+  getFilter,
+  getFilterParamsByTypeName,
+} from "../controllers/filterController";
+
 const apiV1 = Router();
+
+apiV1.get("/filter", authenticate, getFilter);
+apiV1.get(
+  "/filter/:rentity_filter_name",
+  authenticate,
+  getFilterParamsByTypeName
+);
 
 apiV1.get("/entity", authenticate, getEntity);
 apiV1.get("/entity/:id", authenticate, getEntityById);
