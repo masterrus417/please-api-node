@@ -45,7 +45,11 @@ apiV1.get("/entity/:id/stage", authenticate, getStageByEntityID);
 apiV1.get("/entity/:id/action", authenticate, getStageActionByEntityID);
 apiV1.post("/stage/:id/action/:raction_id", authenticate, complitedStage);
 
-apiV1.get("/entity-link/:id", authenticate, getEntityLinks);
+apiV1.get(
+  "/entity-link/:rentity_type_name/:id/link",
+  authenticate,
+  getEntityLinks
+);
 apiV1.delete(
   "/entity-link/:id/link/:id_link/deleted",
   authenticate,
