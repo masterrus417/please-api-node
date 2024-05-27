@@ -13,11 +13,12 @@ export interface entity_stageAttributes {
   user_action?: string;
   ts_created?: Date;
   user_created?: string;
+  entity_stage_entity_id?: number;
 }
 
 export type entity_stagePk = "entity_stage_id";
 export type entity_stageId = entity_stage[entity_stagePk];
-export type entity_stageOptionalAttributes = "entity_stage_id" | "rstage_id" | "entity_id" | "ts_action" | "raction_id" | "user_action" | "ts_created" | "user_created";
+export type entity_stageOptionalAttributes = "entity_stage_id" | "rstage_id" | "entity_id" | "ts_action" | "raction_id" | "user_action" | "ts_created" | "user_created" | "entity_stage_entity_id";
 export type entity_stageCreationAttributes = Optional<entity_stageAttributes, entity_stageOptionalAttributes>;
 
 export class entity_stage extends Model<entity_stageAttributes, entity_stageCreationAttributes> implements entity_stageAttributes {
@@ -29,7 +30,13 @@ export class entity_stage extends Model<entity_stageAttributes, entity_stageCrea
   user_action?: string;
   ts_created?: Date;
   user_created?: string;
+  entity_stage_entity_id?: number;
 
+  // entity_stage belongsTo entity via entity_stage_entity_id
+  entity_stage_entity!: entity;
+  getEntity_stage_entity!: Sequelize.BelongsToGetAssociationMixin<entity>;
+  setEntity_stage_entity!: Sequelize.BelongsToSetAssociationMixin<entity, entityId>;
+  createEntity_stage_entity!: Sequelize.BelongsToCreateAssociationMixin<entity>;
   // entity_stage belongsTo entity via entity_id
   entity!: entity;
   getEntity!: Sequelize.BelongsToGetAssociationMixin<entity>;
@@ -98,6 +105,14 @@ export class entity_stage extends Model<entity_stageAttributes, entity_stageCrea
     user_created: {
       type: DataTypes.STRING(255),
       allowNull: true
+    },
+    entity_stage_entity_id: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: {
+        model: 'entity',
+        key: 'entity_id'
+      }
     }
   }, {
     sequelize,

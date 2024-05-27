@@ -1,5 +1,6 @@
 import * as Sequelize from 'sequelize';
 import { DataTypes, Model, Optional } from 'sequelize';
+import type { ref_attr, ref_attrId } from './ref_attr';
 
 export interface ref_attr_dictAttributes {
   rattr_dict_id: number;
@@ -21,6 +22,11 @@ export class ref_attr_dict extends Model<ref_attr_dictAttributes, ref_attr_dictC
   rattr_dict_name?: string;
   rattr_dict_label?: string;
 
+  // ref_attr_dict belongsTo ref_attr via rattr_id
+  rattr!: ref_attr;
+  getRattr!: Sequelize.BelongsToGetAssociationMixin<ref_attr>;
+  setRattr!: Sequelize.BelongsToSetAssociationMixin<ref_attr, ref_attrId>;
+  createRattr!: Sequelize.BelongsToCreateAssociationMixin<ref_attr>;
 
   static initModel(sequelize: Sequelize.Sequelize): typeof ref_attr_dict {
     return ref_attr_dict.init({
@@ -32,7 +38,11 @@ export class ref_attr_dict extends Model<ref_attr_dictAttributes, ref_attr_dictC
     },
     rattr_id: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: true,
+      references: {
+        model: 'ref_attr',
+        key: 'rattr_id'
+      }
     },
     rattr_dict_no: {
       type: DataTypes.SMALLINT,

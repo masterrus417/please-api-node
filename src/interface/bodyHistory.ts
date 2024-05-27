@@ -1,11 +1,11 @@
 enum EventType {
-  entityCreated = 'Создание сущности',
-  attributeChanged = 'Изменение атрибута',
-  linkAdded = 'Добавление связи',
-  linkDeleted = 'Удаление связи',
-  stagePassed = 'Выполнение этапа',
-  stageStarted = 'Старт этапа',
-  entityDeleted = 'Удаление сущности',
+  entityCreated = "Создание сущности",
+  attributeChanged = "Изменение атрибута",
+  linkAdded = "Добавление связи",
+  linkDeleted = "Удаление связи",
+  stagePassed = "Выполнение этапа",
+  stageStarted = "Старт этапа",
+  entityDeleted = "Удаление сущности",
 }
 
 interface Event {
@@ -19,7 +19,7 @@ interface Event {
 class EventList {
   private events: Event[] = [];
 
-  constructor() { }
+  constructor() {}
 
   addEvent(event: Event) {
     this.events.push(event);
@@ -34,12 +34,12 @@ class EventList {
   }
 
   toJSON() {
-    return this.events.map(event => ({
-    event_type: event.event_type,
-    event_type_name: event.event_type_name,
-    event_description: event.event_description,
-    event_date: event.event_date.toISOString(),
-    event_user: event.event_user,
+    return this.events.map((event) => ({
+      event_type: event.event_type,
+      event_type_name: event.event_type_name,
+      event_description: event.event_description,
+      event_date: event.event_date.toISOString(),
+      event_user: event.event_user,
     }));
   }
 }
