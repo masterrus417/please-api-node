@@ -3,6 +3,7 @@ import { DataTypes, Model, Optional } from 'sequelize';
 import type { entity_attr, entity_attrId } from './entity_attr';
 import type { entity_attr_log, entity_attr_logId } from './entity_attr_log';
 import type { ref_attr_actor, ref_attr_actorId } from './ref_attr_actor';
+import type { ref_attr_dict, ref_attr_dictId } from './ref_attr_dict';
 import type { ref_attr_group, ref_attr_groupId } from './ref_attr_group';
 import type { ref_entity_filter_attr, ref_entity_filter_attrId } from './ref_entity_filter_attr';
 
@@ -72,6 +73,18 @@ export class ref_attr extends Model<ref_attrAttributes, ref_attrCreationAttribut
   hasRef_attr_actor!: Sequelize.HasManyHasAssociationMixin<ref_attr_actor, ref_attr_actorId>;
   hasRef_attr_actors!: Sequelize.HasManyHasAssociationsMixin<ref_attr_actor, ref_attr_actorId>;
   countRef_attr_actors!: Sequelize.HasManyCountAssociationsMixin;
+  // ref_attr hasMany ref_attr_dict via rattr_id
+  ref_attr_dicts!: ref_attr_dict[];
+  getRef_attr_dicts!: Sequelize.HasManyGetAssociationsMixin<ref_attr_dict>;
+  setRef_attr_dicts!: Sequelize.HasManySetAssociationsMixin<ref_attr_dict, ref_attr_dictId>;
+  addRef_attr_dict!: Sequelize.HasManyAddAssociationMixin<ref_attr_dict, ref_attr_dictId>;
+  addRef_attr_dicts!: Sequelize.HasManyAddAssociationsMixin<ref_attr_dict, ref_attr_dictId>;
+  createRef_attr_dict!: Sequelize.HasManyCreateAssociationMixin<ref_attr_dict>;
+  removeRef_attr_dict!: Sequelize.HasManyRemoveAssociationMixin<ref_attr_dict, ref_attr_dictId>;
+  removeRef_attr_dicts!: Sequelize.HasManyRemoveAssociationsMixin<ref_attr_dict, ref_attr_dictId>;
+  hasRef_attr_dict!: Sequelize.HasManyHasAssociationMixin<ref_attr_dict, ref_attr_dictId>;
+  hasRef_attr_dicts!: Sequelize.HasManyHasAssociationsMixin<ref_attr_dict, ref_attr_dictId>;
+  countRef_attr_dicts!: Sequelize.HasManyCountAssociationsMixin;
   // ref_attr hasMany ref_entity_filter_attr via rattr_id
   ref_entity_filter_attrs!: ref_entity_filter_attr[];
   getRef_entity_filter_attrs!: Sequelize.HasManyGetAssociationsMixin<ref_entity_filter_attr>;

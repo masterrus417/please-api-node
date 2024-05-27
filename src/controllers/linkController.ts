@@ -45,7 +45,6 @@ export const getEntityLinks = async (
               model: ref_entity_type,
               as: "rentity_type",
               required: false,
-              // where: { rentity_type_name: rentity_type_name },
               attributes: [
                 "rentity_type_id",
                 "rentity_type_name",
@@ -106,6 +105,7 @@ export const getEntityLinks = async (
           ],
         },
       ],
+      order: [["ts_created", "DESC"]],
     });
 
     const formattedData = links.map((link) => ({
@@ -138,6 +138,8 @@ export const getEntityLinks = async (
           rattr_no: attr.rattr?.rattr_no,
           rattr_group_name: attr.rattr?.rattr_group?.rattr_group_name,
           rattr_group_label: attr.rattr?.rattr_group?.rattr_group_label,
+          entity: link.entity_id_link_entity.entity_id,
+          rattr: attr.rattr?.rattr_id,
         })),
         entity_stage: link.entity_id_link_entity.entity_stages?.map(
           (stage) => ({

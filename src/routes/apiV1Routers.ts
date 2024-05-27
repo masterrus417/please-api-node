@@ -37,7 +37,6 @@ apiV1.get(
 apiV1.get("/entity", authenticate, getEntity);
 apiV1.get("/entity/:id", authenticate, getEntityById);
 apiV1.post("/entity/:rentity_type_name/created", authenticate, createEntity);
-apiV1.get("/entity/:rentity_type_name/type", authenticate, getEntityByType);
 apiV1.delete("/entity/:id/deleted", authenticate, deleteEntity);
 apiV1.patch("/entity/:id/update", authenticate, updateEntityAttr);
 
