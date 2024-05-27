@@ -142,8 +142,10 @@ export function initModels(sequelize: Sequelize) {
   entity.hasMany(entity_entity, { as: "entity_entities", foreignKey: "entity_id"});
   entity_entity.belongsTo(entity, { as: "entity_id_link_entity", foreignKey: "entity_id_link"});
   entity.hasMany(entity_entity, { as: "entity_id_link_entity_entities", foreignKey: "entity_id_link"});
+  entity_stage.belongsTo(entity, { as: "entity_stage_entity", foreignKey: "entity_stage_entity_id"});
+  entity.hasMany(entity_stage, { as: "entity_stages", foreignKey: "entity_stage_entity_id"});
   entity_stage.belongsTo(entity, { as: "entity", foreignKey: "entity_id"});
-  entity.hasMany(entity_stage, { as: "entity_stages", foreignKey: "entity_id"});
+  entity.hasMany(entity_stage, { as: "entity_entity_stages", foreignKey: "entity_id"});
   entity_stage.belongsTo(ref_action, { as: "raction", foreignKey: "raction_id"});
   ref_action.hasMany(entity_stage, { as: "entity_stages", foreignKey: "raction_id"});
   ref_stage_action.belongsTo(ref_action, { as: "raction", foreignKey: "raction_id"});
@@ -160,6 +162,8 @@ export function initModels(sequelize: Sequelize) {
   ref_attr.hasMany(entity_attr_log, { as: "entity_attr_logs", foreignKey: "rattr_id"});
   ref_attr_actor.belongsTo(ref_attr, { as: "rattr", foreignKey: "rattr_id"});
   ref_attr.hasMany(ref_attr_actor, { as: "ref_attr_actors", foreignKey: "rattr_id"});
+  ref_attr_dict.belongsTo(ref_attr, { as: "rattr", foreignKey: "rattr_id"});
+  ref_attr.hasMany(ref_attr_dict, { as: "ref_attr_dicts", foreignKey: "rattr_id"});
   ref_entity_filter_attr.belongsTo(ref_attr, { as: "rattr", foreignKey: "rattr_id"});
   ref_attr.hasMany(ref_entity_filter_attr, { as: "ref_entity_filter_attrs", foreignKey: "rattr_id"});
   ref_attr.belongsTo(ref_attr_group, { as: "rattr_group", foreignKey: "rattr_group_id"});
@@ -178,7 +182,7 @@ export function initModels(sequelize: Sequelize) {
   ref_entity_type.hasMany(ref_stage, { as: "ref_stages", foreignKey: "rentity_type_id"});
   ref_entity_type.belongsTo(ref_route, { as: "rroute", foreignKey: "rroute_id"});
   ref_route.hasMany(ref_entity_type, { as: "ref_entity_types", foreignKey: "rroute_id"});
-  ref_stage.belongsTo(ref_route, { as: "rroute", foreignKey: "rroute_id"});-
+  ref_stage.belongsTo(ref_route, { as: "rroute", foreignKey: "rroute_id"});
   ref_route.hasMany(ref_stage, { as: "ref_stages", foreignKey: "rroute_id"});
   entity_stage.belongsTo(ref_stage, { as: "rstage", foreignKey: "rstage_id"});
   ref_stage.hasMany(entity_stage, { as: "entity_stages", foreignKey: "rstage_id"});
@@ -196,7 +200,6 @@ export function initModels(sequelize: Sequelize) {
   ref_stage_action.hasMany(ref_stage_action_stage, { as: "ref_stage_action_stages", foreignKey: "rstage_action_id"});
 
   return {
-
     entity: entity,
     entity_attr: entity_attr,
     entity_attr_log: entity_attr_log,

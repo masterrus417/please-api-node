@@ -78,7 +78,7 @@ export class entity extends Model<entityAttributes, entityCreationAttributes> im
   hasEntity_id_link_entity_entity!: Sequelize.HasManyHasAssociationMixin<entity_entity, entity_entityId>;
   hasEntity_id_link_entity_entities!: Sequelize.HasManyHasAssociationsMixin<entity_entity, entity_entityId>;
   countEntity_id_link_entity_entities!: Sequelize.HasManyCountAssociationsMixin;
-  // entity hasMany entity_stage via entity_id
+  // entity hasMany entity_stage via entity_stage_entity_id
   entity_stages!: entity_stage[];
   getEntity_stages!: Sequelize.HasManyGetAssociationsMixin<entity_stage>;
   setEntity_stages!: Sequelize.HasManySetAssociationsMixin<entity_stage, entity_stageId>;
@@ -90,6 +90,18 @@ export class entity extends Model<entityAttributes, entityCreationAttributes> im
   hasEntity_stage!: Sequelize.HasManyHasAssociationMixin<entity_stage, entity_stageId>;
   hasEntity_stages!: Sequelize.HasManyHasAssociationsMixin<entity_stage, entity_stageId>;
   countEntity_stages!: Sequelize.HasManyCountAssociationsMixin;
+  // entity hasMany entity_stage via entity_id
+  entity_entity_stages!: entity_stage[];
+  getEntity_entity_stages!: Sequelize.HasManyGetAssociationsMixin<entity_stage>;
+  setEntity_entity_stages!: Sequelize.HasManySetAssociationsMixin<entity_stage, entity_stageId>;
+  addEntity_entity_stage!: Sequelize.HasManyAddAssociationMixin<entity_stage, entity_stageId>;
+  addEntity_entity_stages!: Sequelize.HasManyAddAssociationsMixin<entity_stage, entity_stageId>;
+  createEntity_entity_stage!: Sequelize.HasManyCreateAssociationMixin<entity_stage>;
+  removeEntity_entity_stage!: Sequelize.HasManyRemoveAssociationMixin<entity_stage, entity_stageId>;
+  removeEntity_entity_stages!: Sequelize.HasManyRemoveAssociationsMixin<entity_stage, entity_stageId>;
+  hasEntity_entity_stage!: Sequelize.HasManyHasAssociationMixin<entity_stage, entity_stageId>;
+  hasEntity_entity_stages!: Sequelize.HasManyHasAssociationsMixin<entity_stage, entity_stageId>;
+  countEntity_entity_stages!: Sequelize.HasManyCountAssociationsMixin;
   // entity belongsTo ref_entity_type via rentity_type_id
   rentity_type!: ref_entity_type;
   getRentity_type!: Sequelize.BelongsToGetAssociationMixin<ref_entity_type>;
