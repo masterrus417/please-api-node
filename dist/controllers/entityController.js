@@ -297,13 +297,15 @@ const createEntity = (req, res) => __awaiter(void 0, void 0, void 0, function* (
         const currentRout = yield ref_route.findOne({
             where: { rroute_id: currentType === null || currentType === void 0 ? void 0 : currentType.rroute_id },
         });
-        //вставляем этап начала маршрута
-        yield entity_stage.create({
-            entity_id: newEntity.entity_id,
-            rstage_id: currentRout === null || currentRout === void 0 ? void 0 : currentRout.rstage_id_start,
-            ts_created: new Date(),
-            user_created: (_b = req.user) === null || _b === void 0 ? void 0 : _b.username,
-        });
+        //проверяем есть ли у него первая точка маршутра, если есть вставляем
+        if (currentRout === null || currentRout === void 0 ? void 0 : currentRout.rstage_id_start) {
+            yield entity_stage.create({
+                entity_id: newEntity.entity_id,
+                rstage_id: currentRout === null || currentRout === void 0 ? void 0 : currentRout.rstage_id_start,
+                ts_created: new Date(),
+                user_created: (_b = req.user) === null || _b === void 0 ? void 0 : _b.username,
+            });
+        }
         //возвращаем созданую сущность
         const getEntityByID = yield entity.findAll({
             where: { entity_id: newEntity.entity_id },
@@ -452,7 +454,7 @@ const getEntityByType = (req, res) => __awaiter(void 0, void 0, void 0, function
                         "rroute_id",
                     ],
                     where: {
-                        rentity_type_name: rentity_type_name, // Замените 'some_value' на нужное значение
+                        rentity_type_name: rentity_type_name,
                     },
                 },
                 {
@@ -588,7 +590,7 @@ const getEntityByTypeByID = (req, res) => __awaiter(void 0, void 0, void 0, func
                         "rroute_id",
                     ],
                     where: {
-                        rentity_type_name: rentity_type_name, // Замените 'some_value' на нужное значение
+                        rentity_type_name: rentity_type_name,
                     },
                 },
                 {

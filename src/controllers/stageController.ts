@@ -155,6 +155,14 @@ export const complitedStage = async (
           as: "ref_stage_action_stages",
           attributes: ["rstage_id"],
           required: true,
+          include: [
+            {
+              model: ref_stage,
+              as: "rstage",
+              attributes: ["rentity_type_id"],
+              required: true,
+            },
+          ],
         },
       ],
     });
@@ -164,6 +172,8 @@ export const complitedStage = async (
         stage.ref_stage_action_stages.map((stages) => stages.rstage_id)
       )
       .flat();
+
+    //проверяем нужно ли создать им сущность для отображения атрибутов
 
     //создадим массив для вставки
     const insertData = new_rstage_id.map((stage) => ({

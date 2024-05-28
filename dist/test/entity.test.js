@@ -1,4 +1,5 @@
 "use strict";
+//не ломайте тестовые даныне
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -48,20 +49,20 @@ describe(`GET ${testConfig_1.base_url}/api/v1/entity/request/type`, () => {
         expect(response.status).toBe(200);
     }));
 });
-describe(`PATCH ${testConfig_1.base_url}/api/v1/entity/55/updated`, () => {
+describe(`PATCH ${testConfig_1.base_url}/api/v1/entity/{999999999}/updated`, () => {
     test("should respond with status 200 and return message", () => __awaiter(void 0, void 0, void 0, function* () {
         const response = yield (0, supertest_1.default)(app_1.default)
-            .patch("/api/v1/entity/55/updated")
+            .patch("/api/v1/entity/{999999999}/updated")
             .set("Authorization", `Bearer ${testConfig_1.JWT_TOKEN}`)
             .send(json_1.requestBodyEntityUpdate);
         expect(response.status).toBe(200);
         expect(response.body).toHaveProperty("message");
     }));
 });
-describe(`DELETE ${testConfig_1.base_url}/api/v1/entity/81/deleted`, () => {
+describe(`DELETE ${testConfig_1.base_url}/api/v1/entity/{999999999}/deleted`, () => {
     test("should respond with status 200 and return message", () => __awaiter(void 0, void 0, void 0, function* () {
         const response = yield (0, supertest_1.default)(app_1.default)
-            .delete("/api/v1/entity/81/deleted")
+            .delete("/api/v1/entity/{999999999}/deleted")
             .set("Authorization", `Bearer ${testConfig_1.JWT_TOKEN}`);
         expect(response.status).toBe(200);
         expect(response.body).toHaveProperty("message");
