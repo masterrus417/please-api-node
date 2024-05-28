@@ -307,13 +307,16 @@ export const createEntity = async (
       where: { rroute_id: currentType?.rroute_id },
     });
 
-    //вставляем этап начала маршрута
-    await entity_stage.create({
-      entity_id: newEntity.entity_id,
-      rstage_id: currentRout?.rstage_id_start,
-      ts_created: new Date(),
-      user_created: req.user?.username,
-    });
+    //проверяем есть ли у него первая точка маршутра, если есть вставляем
+    if (currentRout?.rstage_id_start) {
+      await entity_stage.create({
+        entity_id: newEntity.entity_id,
+        rstage_id: currentRout?.rstage_id_start,
+        ts_created: new Date(),
+        user_created: req.user?.username,
+      });
+      console.log("1");
+    }
 
     //возвращаем созданую сущность
     const getEntityByID = await entity.findAll({
@@ -469,7 +472,7 @@ export const getEntityByType = async (
             "rroute_id",
           ],
           where: {
-            rentity_type_name: rentity_type_name, // Замените 'some_value' на нужное значение
+            rentity_type_name: rentity_type_name,
           },
         },
         {
@@ -601,7 +604,7 @@ export const getEntityByTypeByID = async (
             "rroute_id",
           ],
           where: {
-            rentity_type_name: rentity_type_name, // Замените 'some_value' на нужное значение
+            rentity_type_name: rentity_type_name,
           },
         },
         {

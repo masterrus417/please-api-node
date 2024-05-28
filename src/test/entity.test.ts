@@ -1,3 +1,5 @@
+//не ломайте тестовые даныне
+
 import request from "supertest";
 import app from "../app";
 import { requestBodyEntityUpdate } from "./json";
@@ -43,10 +45,10 @@ describe(`GET ${base_url}/api/v1/entity/request/type`, () => {
   });
 });
 
-describe(`PATCH ${base_url}/api/v1/entity/55/updated`, () => {
+describe(`PATCH ${base_url}/api/v1/entity/{999999999}/updated`, () => {
   test("should respond with status 200 and return message", async () => {
     const response = await request(app)
-      .patch("/api/v1/entity/55/updated")
+      .patch("/api/v1/entity/{999999999}/updated")
       .set("Authorization", `Bearer ${JWT_TOKEN}`)
       .send(requestBodyEntityUpdate);
 
@@ -55,10 +57,10 @@ describe(`PATCH ${base_url}/api/v1/entity/55/updated`, () => {
   });
 });
 
-describe(`DELETE ${base_url}/api/v1/entity/81/deleted`, () => {
+describe(`DELETE ${base_url}/api/v1/entity/{999999999}/deleted`, () => {
   test("should respond with status 200 and return message", async () => {
     const response = await request(app)
-      .delete("/api/v1/entity/81/deleted")
+      .delete("/api/v1/entity/{999999999}/deleted")
       .set("Authorization", `Bearer ${JWT_TOKEN}`);
 
     expect(response.status).toBe(200);
