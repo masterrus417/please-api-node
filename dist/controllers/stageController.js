@@ -142,12 +142,21 @@ const complitedStage = (req, res) => __awaiter(void 0, void 0, void 0, function*
                     as: "ref_stage_action_stages",
                     attributes: ["rstage_id"],
                     required: true,
+                    include: [
+                        {
+                            model: ref_stage,
+                            as: "rstage",
+                            attributes: ["rentity_type_id"],
+                            required: true,
+                        },
+                    ],
                 },
             ],
         });
         const new_rstage_id = new_stage
             .map((stage) => stage.ref_stage_action_stages.map((stages) => stages.rstage_id))
             .flat();
+        //проверяем нужно ли создать им сущность для отображения атрибутов
         //создадим массив для вставки
         const insertData = new_rstage_id.map((stage) => {
             var _a;

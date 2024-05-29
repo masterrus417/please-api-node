@@ -305,6 +305,7 @@ const createEntity = (req, res) => __awaiter(void 0, void 0, void 0, function* (
                 ts_created: new Date(),
                 user_created: (_b = req.user) === null || _b === void 0 ? void 0 : _b.username,
             });
+            console.log("1");
         }
         //возвращаем созданую сущность
         const getEntityByID = yield entity.findAll({
