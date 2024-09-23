@@ -1,448 +1,691 @@
 {
     "stages": [
         {
-            "rstage_id": 25,
-            "rstage_name": "candidate_medical_survey_secrecy",
-            "rstage_label": "4.2 Выбор медосмотра. Гос. тайна"
+            "id": "25",
+            "data": {
+                "label": "4.2 Выбор медосмотра. Гос. тайна"
+            },
+            "position": {
+                "x": 250.0491556914716,
+                "y": -410.1561668073241
+            }
         },
         {
-            "rstage_id": 38,
-            "rstage_name": "candidate_application_form_filling",
-            "rstage_label": "6.1 Заполнение кандидатом анкеты"
+            "id": "38",
+            "data": {
+                "label": "6.1 Заполнение кандидатом анкеты"
+            },
+            "position": {
+                "x": -378.2612985614721,
+                "y": -275.96748834976364
+            }
         },
         {
-            "rstage_id": 26,
-            "rstage_name": "candidate_forming_documents_for_order",
-            "rstage_label": "8.2 Передача документов на приказ"
+            "id": "26",
+            "data": {
+                "label": "8.2 Передача документов на приказ"
+            },
+            "position": {
+                "x": -226.4737258154814,
+                "y": 382.2217880111961
+            }
         },
         {
-            "rstage_id": 27,
-            "rstage_name": "candidate_training_preparing",
-            "rstage_label": "5. Подготовка обучения"
+            "id": "27",
+            "data": {
+                "label": "5. Подготовка обучения"
+            },
+            "position": {
+                "x": -464.55319823261124,
+                "y": 143.55002644678703
+            }
         },
         {
-            "rstage_id": 52,
-            "rstage_name": "candidate_employed",
-            "rstage_label": "10.1 Трудоустроен"
+            "id": "52",
+            "data": {
+                "label": "10.1 Трудоустроен"
+            },
+            "position": {
+                "x": 450.18443477698855,
+                "y": -139.94733299493967
+            }
         },
         {
-            "rstage_id": 41,
-            "rstage_name": "candidate_medical_survey_secrecy_processing",
-            "rstage_label": "4.5 Прохождение медосмотра по гос. тайне"
+            "id": "41",
+            "data": {
+                "label": "4.5 Прохождение медосмотра по гос. тайне"
+            },
+            "position": {
+                "x": -479.3316221072118,
+                "y": -64.47531171769299
+            }
         },
         {
-            "rstage_id": 53,
-            "rstage_name": "candidate_rejected_permanently",
-            "rstage_label": "11. Кандидат отклонен окончательно"
+            "id": "53",
+            "data": {
+                "label": "11. Кандидат отклонен окончательно"
+            },
+            "position": {
+                "x": -18.088587698802343,
+                "y": -426.1671254221962
+            }
         },
         {
-            "rstage_id": 13,
-            "rstage_name": "candidate_start",
-            "rstage_label": "0.1 Кандидат на рассмотрении"
+            "id": "13",
+            "data": {
+                "label": "0.1 Кандидат на рассмотрении"
+            },
+            "position": {
+                "x": -413.7576690408352,
+                "y": -115.4163394116032
+            }
         },
         {
-            "rstage_id": 14,
-            "rstage_name": "candidate_approve_042",
-            "rstage_label": "0.2 Согласование кандидата в 042"
+            "id": "14",
+            "data": {
+                "label": "0.2 Согласование кандидата в 042"
+            },
+            "position": {
+                "x": -316.4964605984499,
+                "y": 383.42621623972656
+            }
         },
         {
-            "rstage_id": 28,
-            "rstage_name": "candodate_briefing",
-            "rstage_label": "4.2 Прохождение инструктажей"
+            "id": "28",
+            "data": {
+                "label": "4.2 Прохождение инструктажей"
+            },
+            "position": {
+                "x": 395.250007296145,
+                "y": -355.4634175177487
+            }
         },
         {
-            "rstage_id": 42,
-            "rstage_name": "candidate_medical_survey_conclusion",
-            "rstage_label": "4.8 Передача заключения в 053 для анкеты"
+            "id": "42",
+            "data": {
+                "label": "4.8 Передача заключения в 053 для анкеты"
+            },
+            "position": {
+                "x": 448.53961365163593,
+                "y": -44.448289141061814
+            }
         },
         {
-            "rstage_id": 43,
-            "rstage_name": "candidate_briefing_processing",
-            "rstage_label": "3.0 Прохождение инструктажей"
+            "id": "43",
+            "data": {
+                "label": "3.0 Прохождение инструктажей"
+            },
+            "position": {
+                "x": 386.857636834878,
+                "y": -214.38641187499806
+            }
         },
         {
-            "rstage_id": 15,
-            "rstage_name": "candidate_sheduling",
-            "rstage_label": "1.0 Назначение собеседований"
+            "id": "15",
+            "data": {
+                "label": "1.0 Назначение собеседований"
+            },
+            "position": {
+                "x": 60.6256347106043,
+                "y": -493.29657661589494
+            }
         },
         {
-            "rstage_id": 16,
-            "rstage_name": "candidate_conducting",
-            "rstage_label": "1.2 Проведение собеседования"
+            "id": "16",
+            "data": {
+                "label": "1.2 Проведение собеседования"
+            },
+            "position": {
+                "x": 335.64650373075057,
+                "y": -328.04395526561865
+            }
         },
         {
-            "rstage_id": 17,
-            "rstage_name": "candidate_issuance_of_documents",
-            "rstage_label": "7.0 Выдача пакета документов"
+            "id": "17",
+            "data": {
+                "label": "7.0 Выдача пакета документов"
+            },
+            "position": {
+                "x": -69.64949385614946,
+                "y": 471.34061077732304
+            }
         },
         {
-            "rstage_id": 29,
-            "rstage_name": "candidate_rejected",
-            "rstage_label": "10. В базе кандидатов"
+            "id": "29",
+            "data": {
+                "label": "10. В базе кандидатов"
+            },
+            "position": {
+                "x": 182.42874276541048,
+                "y": 453.9382955943374
+            }
         },
         {
-            "rstage_id": 30,
-            "rstage_name": "candidate_application_form_complited",
-            "rstage_label": "6.2 Проверка и отправка анкеты"
+            "id": "30",
+            "data": {
+                "label": "6.2 Проверка и отправка анкеты"
+            },
+            "position": {
+                "x": -481.90500940626407,
+                "y": 44.87467834878551
+            }
         },
         {
-            "rstage_id": 31,
-            "rstage_name": "candidate_approve_ceo",
-            "rstage_label": "0.3 Согласование кандидата с ЗГД по безопасности"
+            "id": "31",
+            "data": {
+                "label": "0.3 Согласование кандидата с ЗГД по безопасности"
+            },
+            "position": {
+                "x": 3.1788050318655774,
+                "y": 425.24070481449
+            }
         },
         {
-            "rstage_id": 44,
-            "rstage_name": "candidate_order_checking_actual",
-            "rstage_label": "8.1 Проверка актуальности заявки"
+            "id": "44",
+            "data": {
+                "label": "8.1 Проверка актуальности заявки"
+            },
+            "position": {
+                "x": -460.3042047891365,
+                "y": -206.8908280528639
+            }
         },
         {
-            "rstage_id": 21,
-            "rstage_name": "candidate_application_form_submitted",
-            "rstage_label": "6.3 Проверка анкеты 100"
+            "id": "21",
+            "data": {
+                "label": "6.3 Проверка анкеты 100"
+            },
+            "position": {
+                "x": 90.14649533274569,
+                "y": 452.03723207660335
+            }
         },
         {
-            "rstage_id": 22,
-            "rstage_name": "candidate_medical_survey_harmful_factors_processing",
-            "rstage_label": "4.4 Прохождение медосмотра по вредным факторам"
+            "id": "22",
+            "data": {
+                "label": "4.4 Прохождение медосмотра по вредным факторам"
+            },
+            "position": {
+                "x": -359.074103008668,
+                "y": -374.62818877192717
+            }
         },
         {
-            "rstage_id": 23,
-            "rstage_name": "candidate_medical_survey_harmful_factors",
-            "rstage_label": "4.1 Выбор медосмотра. Вредные факторы"
+            "id": "23",
+            "data": {
+                "label": "4.1 Выбор медосмотра. Вредные факторы"
+            },
+            "position": {
+                "x": 318.86021973014863,
+                "y": 343.7943089276321
+            }
         },
         {
-            "rstage_id": 32,
-            "rstage_name": "candidate_conducted",
-            "rstage_label": "1.3 Собеседование проведено"
+            "id": "32",
+            "data": {
+                "label": "1.3 Собеседование проведено"
+            },
+            "position": {
+                "x": -438.9274660154504,
+                "y": 242.9159507315609
+            }
         },
         {
-            "rstage_id": 45,
-            "rstage_name": "candidate_order_drafting",
-            "rstage_label": "8.3 Составление приказа"
+            "id": "45",
+            "data": {
+                "label": "8.3 Составление приказа"
+            },
+            "position": {
+                "x": -367.0267785384438,
+                "y": 295.5548298771613
+            }
         },
         {
-            "rstage_id": 46,
-            "rstage_name": "candidate_order_documents",
-            "rstage_label": "8.0 Сбор документов"
+            "id": "46",
+            "data": {
+                "label": "8.0 Сбор документов"
+            },
+            "position": {
+                "x": 155.3522633764123,
+                "y": -443.819905433179
+            }
         },
         {
-            "rstage_id": 47,
-            "rstage_name": "candidate_order_signing_contract",
-            "rstage_label": "8.4 Подписание трудового договора"
+            "id": "47",
+            "data": {
+                "label": "8.4 Подписание трудового договора"
+            },
+            "position": {
+                "x": -94.08636984966365,
+                "y": -500.0
+            }
         },
         {
-            "rstage_id": 33,
-            "rstage_name": "candidate_forming_route",
-            "rstage_label": "2.1 Формирование маршрутной карты"
+            "id": "33",
+            "data": {
+                "label": "2.1 Формирование маршрутной карты"
+            },
+            "position": {
+                "x": -176.16681309230069,
+                "y": 461.67032434647757
+            }
         },
         {
-            "rstage_id": 35,
-            "rstage_name": "candidate_route_application_form",
-            "rstage_label": "2.1.1 Формирование маршрутной карты. Анкета"
+            "id": "35",
+            "data": {
+                "label": "2.1.1 Формирование маршрутной карты. Анкета"
+            },
+            "position": {
+                "x": 495.89389936060746,
+                "y": 24.064880571685933
+            }
         },
         {
-            "rstage_id": 36,
-            "rstage_name": "candidate_route_medical_survey",
-            "rstage_label": "2.1.2 Формирование маршрутной карты. Медосмотр"
+            "id": "36",
+            "data": {
+                "label": "2.1.2 Формирование маршрутной карты. Медосмотр"
+            },
+            "position": {
+                "x": 404.07192856339253,
+                "y": 303.43221453292784
+            }
         },
         {
-            "rstage_id": 37,
-            "rstage_name": "candidate_route_training",
-            "rstage_label": "2.1.3 Формирование маршрутной карты. Обучение рабочих"
+            "id": "37",
+            "data": {
+                "label": "2.1.3 Формирование маршрутной карты. Обучение рабочих"
+            },
+            "position": {
+                "x": -196.62755012867225,
+                "y": -441.95032061432596
+            }
         },
         {
-            "rstage_id": 48,
-            "rstage_name": "candidate_training_approving",
-            "rstage_label": "5.1 Согласование заявки на обучение"
+            "id": "48",
+            "data": {
+                "label": "5.1 Согласование заявки на обучение"
+            },
+            "position": {
+                "x": -252.02271204642375,
+                "y": -364.9479476122914
+            }
         },
         {
-            "rstage_id": 49,
-            "rstage_name": "candidate_training_contract",
-            "rstage_label": "5.2 Заключение договора об обучении"
+            "id": "49",
+            "data": {
+                "label": "5.2 Заключение договора об обучении"
+            },
+            "position": {
+                "x": 460.1567817474509,
+                "y": 218.50701805169018
+            }
         },
         {
-            "rstage_id": 50,
-            "rstage_name": "candidate_training_processing",
-            "rstage_label": "5.3 Прохождение обучения"
+            "id": "50",
+            "data": {
+                "label": "5.3 Прохождение обучения"
+            },
+            "position": {
+                "x": 468.52391085125663,
+                "y": 123.7618783804984
+            }
         },
         {
-            "rstage_id": 51,
-            "rstage_name": "candidate_training_processing_again",
-            "rstage_label": "5.4 Прохождение обучения. Пересдача"
+            "id": "51",
+            "data": {
+                "label": "5.4 Прохождение обучения. Пересдача"
+            },
+            "position": {
+                "x": 286.98702933427325,
+                "y": 429.6746478745462
+            }
         }
     ],
     "actions": [
         {
-            "source": 13,
-            "target": 29
+            "id": "13-29",
+            "source": "13",
+            "target": "29"
         },
         {
-            "source": 13,
-            "target": 14
+            "id": "13-14",
+            "source": "13",
+            "target": "14"
         },
         {
-            "source": 13,
-            "target": 15
+            "id": "13-15",
+            "source": "13",
+            "target": "15"
         },
         {
-            "source": 13,
-            "target": 31
+            "id": "13-31",
+            "source": "13",
+            "target": "31"
         },
         {
-            "source": 14,
-            "target": 15
+            "id": "14-15",
+            "source": "14",
+            "target": "15"
         },
         {
-            "source": 14,
-            "target": 16
+            "id": "14-16",
+            "source": "14",
+            "target": "16"
         },
         {
-            "source": 31,
-            "target": 15
+            "id": "31-15",
+            "source": "31",
+            "target": "15"
         },
         {
-            "source": 31,
-            "target": 16
+            "id": "31-16",
+            "source": "31",
+            "target": "16"
         },
         {
-            "source": 15,
-            "target": 15
+            "id": "15-15",
+            "source": "15",
+            "target": "15"
         },
         {
-            "source": 15,
-            "target": 16
+            "id": "15-16",
+            "source": "15",
+            "target": "16"
         },
         {
-            "source": 15,
-            "target": 33
+            "id": "15-33",
+            "source": "15",
+            "target": "33"
         },
         {
-            "source": 16,
-            "target": 32
+            "id": "16-32",
+            "source": "16",
+            "target": "32"
         },
         {
-            "source": 16,
-            "target": 15
+            "id": "16-15",
+            "source": "16",
+            "target": "15"
         },
         {
-            "source": 32,
-            "target": 15
+            "id": "32-15",
+            "source": "32",
+            "target": "15"
         },
         {
-            "source": 32,
-            "target": 33
+            "id": "32-33",
+            "source": "32",
+            "target": "33"
         },
         {
-            "source": 32,
-            "target": 29
+            "id": "32-29",
+            "source": "32",
+            "target": "29"
         },
         {
-            "source": 33,
-            "target": 35
+            "id": "33-35",
+            "source": "33",
+            "target": "35"
         },
         {
-            "source": 33,
-            "target": 29
+            "id": "33-29",
+            "source": "33",
+            "target": "29"
         },
         {
-            "source": 35,
-            "target": 36
+            "id": "35-36",
+            "source": "35",
+            "target": "36"
         },
         {
-            "source": 35,
-            "target": 38
+            "id": "35-38",
+            "source": "35",
+            "target": "38"
         },
         {
-            "source": 35,
-            "target": 36
+            "id": "35-36",
+            "source": "35",
+            "target": "36"
         },
         {
-            "source": 36,
-            "target": 37
+            "id": "36-37",
+            "source": "36",
+            "target": "37"
         },
         {
-            "source": 36,
-            "target": 23
+            "id": "36-23",
+            "source": "36",
+            "target": "23"
         },
         {
-            "source": 36,
-            "target": 37
+            "id": "36-37",
+            "source": "36",
+            "target": "37"
         },
         {
-            "source": 37,
-            "target": 17
+            "id": "37-17",
+            "source": "37",
+            "target": "17"
         },
         {
-            "source": 37,
-            "target": 27
+            "id": "37-27",
+            "source": "37",
+            "target": "27"
         },
         {
-            "source": 37,
-            "target": 17
+            "id": "37-17",
+            "source": "37",
+            "target": "17"
         },
         {
-            "source": 43,
-            "target": 44
+            "id": "43-44",
+            "source": "43",
+            "target": "44"
         },
         {
-            "source": 43,
-            "target": 29
+            "id": "43-29",
+            "source": "43",
+            "target": "29"
         },
         {
-            "source": 23,
-            "target": 25
+            "id": "23-25",
+            "source": "23",
+            "target": "25"
         },
         {
-            "source": 23,
-            "target": 22
+            "id": "23-22",
+            "source": "23",
+            "target": "22"
         },
         {
-            "source": 23,
-            "target": 25
+            "id": "23-25",
+            "source": "23",
+            "target": "25"
         },
         {
-            "source": 25,
-            "target": 42
+            "id": "25-42",
+            "source": "25",
+            "target": "42"
         },
         {
-            "source": 25,
-            "target": 41
+            "id": "25-41",
+            "source": "25",
+            "target": "41"
         },
         {
-            "source": 25,
-            "target": 42
+            "id": "25-42",
+            "source": "25",
+            "target": "42"
         },
         {
-            "source": 22,
-            "target": 42
+            "id": "22-42",
+            "source": "22",
+            "target": "42"
         },
         {
-            "source": 22,
-            "target": 36
+            "id": "22-36",
+            "source": "22",
+            "target": "36"
         },
         {
-            "source": 41,
-            "target": 36
+            "id": "41-36",
+            "source": "41",
+            "target": "36"
         },
         {
-            "source": 41,
-            "target": 42
+            "id": "41-42",
+            "source": "41",
+            "target": "42"
         },
         {
-            "source": 42,
-            "target": 44
+            "id": "42-44",
+            "source": "42",
+            "target": "44"
         },
         {
-            "source": 27,
-            "target": 48
+            "id": "27-48",
+            "source": "27",
+            "target": "48"
         },
         {
-            "source": 48,
-            "target": 49
+            "id": "48-49",
+            "source": "48",
+            "target": "49"
         },
         {
-            "source": 48,
-            "target": 27
+            "id": "48-27",
+            "source": "48",
+            "target": "27"
         },
         {
-            "source": 49,
-            "target": 50
+            "id": "49-50",
+            "source": "49",
+            "target": "50"
         },
         {
-            "source": 49,
-            "target": 29
+            "id": "49-29",
+            "source": "49",
+            "target": "29"
         },
         {
-            "source": 50,
-            "target": 26
+            "id": "50-26",
+            "source": "50",
+            "target": "26"
         },
         {
-            "source": 50,
-            "target": 27
+            "id": "50-27",
+            "source": "50",
+            "target": "27"
         },
         {
-            "source": 50,
-            "target": 51
+            "id": "50-51",
+            "source": "50",
+            "target": "51"
         },
         {
-            "source": 51,
-            "target": 26
+            "id": "51-26",
+            "source": "51",
+            "target": "26"
         },
         {
-            "source": 51,
-            "target": 27
+            "id": "51-27",
+            "source": "51",
+            "target": "27"
         },
         {
-            "source": 51,
-            "target": 51
+            "id": "51-51",
+            "source": "51",
+            "target": "51"
         },
         {
-            "source": 38,
-            "target": 30
+            "id": "38-30",
+            "source": "38",
+            "target": "30"
         },
         {
-            "source": 30,
-            "target": 38
+            "id": "30-38",
+            "source": "30",
+            "target": "38"
         },
         {
-            "source": 30,
-            "target": 21
+            "id": "30-21",
+            "source": "30",
+            "target": "21"
         },
         {
-            "source": 21,
-            "target": 38
+            "id": "21-38",
+            "source": "21",
+            "target": "38"
         },
         {
-            "source": 17,
-            "target": 43
+            "id": "17-43",
+            "source": "17",
+            "target": "43"
         },
         {
-            "source": 17,
-            "target": 29
+            "id": "17-29",
+            "source": "17",
+            "target": "29"
         },
         {
-            "source": 44,
-            "target": 26
+            "id": "44-26",
+            "source": "44",
+            "target": "26"
         },
         {
-            "source": 44,
-            "target": 29
+            "id": "44-29",
+            "source": "44",
+            "target": "29"
         },
         {
-            "source": 26,
-            "target": 45
+            "id": "26-45",
+            "source": "26",
+            "target": "45"
         },
         {
-            "source": 45,
-            "target": 47
+            "id": "45-47",
+            "source": "45",
+            "target": "47"
         },
         {
-            "source": 46,
-            "target": 44
+            "id": "46-44",
+            "source": "46",
+            "target": "44"
         },
         {
-            "source": 47,
-            "target": 52
+            "id": "47-52",
+            "source": "47",
+            "target": "52"
         },
         {
-            "source": 29,
-            "target": 13
+            "id": "29-13",
+            "source": "29",
+            "target": "13"
         },
         {
-            "source": 29,
-            "target": 53
+            "id": "29-53",
+            "source": "29",
+            "target": "53"
         },
         {
-            "source": 21,
-            "target": 26
+            "id": "21-26",
+            "source": "21",
+            "target": "26"
         },
         {
-            "source": 27,
-            "target": 29
+            "id": "27-29",
+            "source": "27",
+            "target": "29"
         },
         {
-            "source": 38,
-            "target": 29
+            "id": "38-29",
+            "source": "38",
+            "target": "29"
+        },
+        {
+            "id": "28-26",
+            "source": "28",
+            "target": "26"
         }
     ]
 }
